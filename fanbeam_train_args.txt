@@ -1,0 +1,28 @@
+[arguments]
+num_epochs                    = 50                                help = # of epoch
+batch_size                    = 1                                 help = # images in batch
+lr_start                      = 0.0003                            help = Initial learning rate for adam
+lr_end                        = 0.0000005                         help = Final learning rate for adam
+use_gpu                       = 1                                 help = GPU flag, 1 for GPU and 0 for CPU 
+phase                         = 'train'                           help = Train or test  
+ckpt_dir                      = './checkpoint'                    help = Models are saved here         
+sample_dir                    = './sample'                        help = Sample output images are saved here        
+ndct_test_dir                 = '/data/CT_images/test'           help = NDCT dataset directory for testing
+svct_test_dir                 = '/data/sino_data/144_360_Limited-angle/test'           help = SVCT dataset directory for testing
+test_dir                      = './test'                          help = Test samples are saved here    
+ndct_training_dir             = '/data/CT_images/train'         help = NDCT dataset for training
+svct_training_dir             = '/data/sino_data/144_360_Limited-angle/train'         help = SVCT dataset for training
+dx                            = 0.065                             help = Pixel size (cm) 
+volume_size                   = 512                               help = The volume size (pixel dimensions of CT image, actual variable format: [x,x])  
+volume_spacing                = 1                                 help = Define space between volume spaces (actual variable format: [x,x]) 
+angular_range                 = 144                               help = Range of rotation of scan
+numbin                        = 729                               help = Number of bins collecting data in forward projection
+fan_angle                     = 35.0                              help = Angle of fanbeam projection 
+detector_spacing              = 1.0                               help = Define space between detector spaces 
+numtheta                      = 360                                help = Define number of projections
+geom                          = 'fanflat'                         help = Geometry (parallel, or fanflat (cone not supported))          
+source_detector_distance      = 2000                              help = Define the distance of the detector") #DSO+DOD    
+source_isocenter_distance     = 1000                              help = Distance of Isoceles 
+strategy_type                 = 'SART'                           help = Image evaluation strategy
+numits                        = 40                                help = Maximum number of iterations
+ns                            = 1                                 help = Number of subsets. must divide evenly into number of angles 

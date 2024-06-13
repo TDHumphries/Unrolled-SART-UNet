@@ -1,0 +1,45 @@
+Implementation of CNN with SART and LEARN strategies
+
+If you need more help please don't hesitate to email us:
+
+(phase_2) Noah McMichael - nmcmichaelwork@gmail.com
+(phase_2) Pedro Goncalves Mokarzel - pgmoka@live.com
+(phase_3) Yiran Jia - yjia757@gmail.com
+
++ ----------------------------------------------------------------------------------------------------------------------------------------------
+
+Updates in phase_3:
+Testing LEARN with 3Layer-CNN architecture by using model_learn.py
+Testing SART with 3Layer-CNN architecture by using model_sart.py
+Testing LEARN with U-net architecture by using model_learn_unet.py
+Testing SART with U-net architecture by using model_sart_unet.py
++ ----------------------------------------------------------------------------------------------------------------------------------------------
+
+Please refer to fanbeam_train_args.txt for more information on input arguments and directory setup.
++ ----------------------------------------------------------------------------------------------------------------------------------------------
+ 
+Currently only 2D CT slices are supported. Slice sinograms must be put into a format that PYRO-NN {} supports. The following is
+an example of sinogram data generation with an angular range of 360, source detector distance of 2000, source isocenter distance of 1000,
+pixel dx of 0.065, counts at 1e6 and 90 projections, using fanflat geometry.The input file is specified as CT_images, and the output file 
+is specified as sinos. 
+
+CUDA_VISIBLE_DEVICES=0 python SynoGenerator.py  --in CT_images/ --out sinos --angular_range_definition 360  --source_detector_distance 2000 --source_isocenter_distance 1000 --dx 0.065 --geom fanflat --counts 1e6 --number_of_project 90
++ ----------------------------------------------------------------------------------------------------------------------------------------------
+
+To train the model with a specified .txt argument file:
+awk '{print $3}' fanbeam_train_args.txt | xargs python main.py
++ ----------------------------------------------------------------------------------------------------------------------------------------------
+
+Future work/issues:
+Testing is currently automatic, but actual specified testing routine has not yet been implimented.
+Range manually adapted in model.py, 255 changed to 2000 to temporarily fix image rescaling. 
+In arr2img in utils.py, arguments need to be passed for the clean and noisy image dimensions, rather than their current hard coded state.
+currently checkpoint and sample contents should be deleted after each run.
++ ----------------------------------------------------------------------------------------------------------------------------------------------
+
+references:
+For further reading about our implimentation: refer to REDUCTION OF NOISE ON CT RECONSTRUCTION COMPARISON.docx in this repo.
+Pyro paper: https://arxiv.org/abs/1904.13342
+Pyro-NN repo: https://github.com/csyben/PYRO-NN
+LEARN paper: https://arxiv.org/abs/1707.09636
+Unet paper: https://arxiv.org/abs/1505.04597
