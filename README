@@ -1,11 +1,11 @@
 Implementation of CNN with SART and LEARN strategies
 
-If you need more help please don't hesitate to email us:
+Code for paper 
+"Superiorization-inspired unrolled SART algorithm with U-Net generated perturbations for sparse-view and limited-angle CT reconstruction" (2023) 
+Yiran Jia, Noah McMichael, Pedro Mokarzel, Brandon Thompson, Dong Si, Thomas Humphries. 
+Physics in Medicine & Biology 67(24). 245004
 
-(phase_2) Noah McMichael - nmcmichaelwork@gmail.com
-(phase_2) Pedro Goncalves Mokarzel - pgmoka@live.com
-(phase_3) Yiran Jia - yjia757@gmail.com
-
+email: thumphri@uw.edu
 + ----------------------------------------------------------------------------------------------------------------------------------------------
 
 Updates in phase_3:
@@ -38,8 +38,8 @@ currently checkpoint and sample contents should be deleted after each run.
 + ----------------------------------------------------------------------------------------------------------------------------------------------
 
 references:
-For further reading about our implimentation: refer to REDUCTION OF NOISE ON CT RECONSTRUCTION COMPARISON.docx in this repo.
-Pyro paper: https://arxiv.org/abs/1904.13342
+For further reading about our implimentation: 
+Pyro-NN paper: https://arxiv.org/abs/1904.13342
 Pyro-NN repo: https://github.com/csyben/PYRO-NN
 LEARN paper: https://arxiv.org/abs/1707.09636
 Unet paper: https://arxiv.org/abs/1505.04597
